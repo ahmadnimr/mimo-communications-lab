@@ -205,6 +205,43 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.loa
+*.lol
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.idx
+*.ilg
+*.ind
+*.thm
+*.bak
+/lectures/*.pdf
+
 # Ruff stuff:
 .ruff_cache/
 

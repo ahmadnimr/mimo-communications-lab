@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm,array,xcolor,booktabs,longtable}
+\usepackage{tikz,microtype,enumitem}
+\usepackage[nolist]{acronym}
+\usetikzlibrary{arrows.meta,positioning,fit}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\newenvironment{example}[1]{\par\medskip\noindent\textbf{Worked example: #1.}\ }{\par\medskip}
+\setlist[itemize]{noitemsep}
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MIMO Communications - Common LaTeX Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Required packages:
+% \usepackage{amsmath,amssymb,amsfonts}
+% \usepackage{mathtools}
+% \usepackage{bm}
+% \usepackage{array}
+% \usepackage{xcolor}
+%
+% Convention:
+% - Scalars: italic
+% - Vectors/matrices: bold lowercase/uppercase
+% - Sets: calligraphic
+% - Descriptive indices: \mathsf
+% - Matrix transpose markers: \mathsf
+% - Named mathematical operators: upright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1. REVIEW AND EDITING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Display old text [blue] and proposed text [red]
+\newcommand{\Review}[2]{%
+	{\color{blue}[#1]}{\color{red}[#2]}}
+
+% Display corrected versions
+\newcommand{\Fixed}[2]{%
+	{\color{orange}[#1]}{\color{green}[#2]}}
+
+% Show only the accepted version (first argument)
+\newcommand{\Done}[2]{#1}
+
+% Comments and notes
+\newcommand{\Response}[1]{{\color{magenta}[#1]}}
+\newcommand{\Note}[1]{{\color{blue}[#1]}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2. GENERAL UTILITIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fixed-width table columns with proper line breaks
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Display literal LaTeX text
+\newcommand{\ttplain}[1]{\texttt{\detokenize{#1}}}
+
+% Underbraces for expressions in matrices/arrays
+\newcommand{\undermat}[2]{%
+	\makebox[0pt][l]{$%
+		\smash{%
+			\underbrace{%
+				\phantom{\begin{matrix}#2\end{matrix}}%
+			}_{\text{$#1$}}%
+		}$}#2}
+
+\newcommand{\coolunder}[2]{%
+	\mathrlap{%
+		\smash{%
+			\underbrace{%
+				\phantom{\begin{matrix}#2\end{matrix}}%
+			}_{\mbox{$#1$}}%
+		}%
+	}#2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3. CROSS-REFERENCING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\figref}[1]{Figure.~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\theref}[1]{Theorem~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+
+% Define if not already provided by another package
+\providecommand{\algref}[1]{}
+\renewcommand{\algref}[1]{Algorithm~\ref{#1}}
+% Additional packages for notation tables
+\usepackage{longtable}
+\usepackage{array}

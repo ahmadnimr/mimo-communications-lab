@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4. MATHEMATICAL OPERATORS AND DELIMITERS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Ceiling and floor (mathtools)
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+% Optimization operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argfirst}{arg\,first}
+
+% Angle/phase of complex quantity
+% Overrides any existing \ang definition
+\providecommand{\ang}[1]{}
+\renewcommand{\ang}[1]{%
+	\operatorname{angle}\left(#1\right)}
+
+% Definition symbol
+\newcommand{\define}{\triangleq}
+
+% Delimiters (legacy commands)
+\newcommand{\LeftP}{\left\lbrace}
+\newcommand{\RightP}{\right\rbrace}
+\newcommand{\LeftPD}{\left(}
+\newcommand{\RightPD}{\right)}
+
+% Additional delimiters
+\newcommand{\Abs}[1]{\left|#1\right|}
+\newcommand{\inner}[2]{%
+	\left\langle #1,#2\right\rangle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5. SETS AND NUMBER FIELDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\compl}{\mathbb{C}}   % Complex field
+\newcommand{\real}{\mathbb{R}}    % Real field
+\newcommand{\intg}{\mathbb{Z}}    % Integers
+\newcommand{\galois}{\mathbb{F}_2} % Binary finite field
+
+% Calligraphic sets
+\newcommand{\set}[1]{\mathcal{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6. VECTORS AND MATRICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Bold lowercase vectors and uppercase matrices
+\newcommand{\ma}[1]{\bm{#1}}
+
+% Element indexing
+\newcommand{\IndexM}[3]{#1\left[#2,#3\right]}
+\newcommand{\IndexV}[2]{#1\left[#2\right]}
+
+% Norms
+\newcommand{\Norm}[1]{\left\|#1\right\|}
+\newcommand{\NormTwo}[1]{\left\|#1\right\|_2}
+\newcommand{\frob}[1]{\left\|#1\right\|_{\mathsf{F}}}
+
+% Matrix operations
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\pinv}[1]{{#1}^{+}}        % Pseudoinverse
+\newcommand{\mT}[1]{{#1}^{\mathsf{T}}} % Transpose
+\newcommand{\mH}[1]{{#1}^{\mathsf{H}}} % Hermitian transpose
+\newcommand{\mC}[1]{{#1}^{*}}         % Complex conjugate
+
+% Matrix properties and functions
+\newcommand{\trace}[1]{%
+	\operatorname{tr}\left(#1\right)}
+\newcommand{\rank}[1]{%
+	\operatorname{rank}\left(#1\right)}
+\newcommand{\Cond}[1]{%
+	\operatorname{cond}\left(#1\right)}
+\newcommand{\Det}[1]{%
+	\operatorname{det}\left(#1\right)}
+\newcommand{\diag}[1]{%
+	\operatorname{diag}\left(#1\right)}
+
+% Alias for compatibility
+\newcommand{\diagM}[1]{\diag{#1}}
+
+% Vector subspaces
+\newcommand{\Span}[1]{%
+	\operatorname{span}\left(#1\right)}
+\newcommand{\Null}[1]{%
+	\operatorname{null}\left(#1\right)}
+\newcommand{\Range}[1]{%
+	\operatorname{range}\left(#1\right)}
+
+% Vectorization and reshaping
+\newcommand{\Vect}[1]{%
+	\operatorname{vec}\left(#1\right)}
+\newcommand{\unvec}[3]{%
+	\operatorname{unvec}_{#2\times #3}\left(#1\right)}
+
+% Matrix products
+\newcommand{\elemProd}[2]{#1\odot #2}
+\newcommand{\elemDiv}[2]{#1\oslash #2}
+\newcommand{\kronProd}[2]{#1\otimes #2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7. PROBABILITY AND STATISTICS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Expectation and variance
+\newcommand{\Ex}[1]{%
+	\mathbb{E}\left[#1\right]}
+\newcommand{\Var}[1]{%
+	\operatorname{Var}\left[#1\right]}
+
+% Covariance and correlation
+\newcommand{\Cov}[2]{%
+	\operatorname{Cov}\left(#1,#2\right)}
+\newcommand{\Corr}[2]{%
+	\operatorname{Corr}\left(#1,#2\right)}
+
+% Probability of an event
+\newcommand{\Prob}[1]{%
+	\Pr\left(#1\right)}
+
+% Mean-square error
+\newcommand{\MSE}[1]{%
+	\operatorname{MSE}\left(#1\right)}
+
+% Distribution notation
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\CNormal}{\mathcal{CN}}
+
+% Complex signal operations
+\newcommand{\RE}[1]{%
+	\operatorname{Re}\left\{#1\right\}}
+\newcommand{\IM}[1]{%
+	\operatorname{Im}\left\{#1\right\}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 8. SIGNAL PROCESSING OPERATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fourier transform
+\newcommand{\FT}[1]{%
+	\mathcal{F}\left\{#1\right\}}
+
+% Circular convolution
+\newcommand{\circConv}[2]{#1\circledast #2}
+
+% Modulo reduction notation
+\newcommand{\modulo}[2]{%
+	\left\langle #1\right\rangle_{#2}}
+
+% Sinc function
+\newcommand{\Sinc}[1]{%
+	\operatorname{sinc}\left(#1\right)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 9. MIMO DIMENSIONS AND INDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Subscripts t/r: transmit/receive interfaces
+% Superscripts rf/a: RF-chain/antenna-element interfaces
+% No superscript: effective digital signal ports
+% S: number of data streams
+%
+% Descriptive indices are upright (\mathsf).
+% Running mathematical indices are italic..
+
+% Digital signal ports
+\newcommand{\NT}{N_{\mathsf{t}}}
+\newcommand{\NR}{N_{\mathsf{r}}}
+\newcommand{\nT}{n_{\mathsf{t}}}
+\newcommand{\nR}{n_{\mathsf{r}}}
+
+% Data streams
+\newcommand{\NS}{S}
+\newcommand{\nS}{s}
+
+% RF chains
+\newcommand{\NTrf}{N_{\mathsf{t}}^{\mathsf{rf}}}
+\newcommand{\NRrf}{N_{\mathsf{r}}^{\mathsf{rf}}}
+\newcommand{\nTrf}{n_{\mathsf{t}}^{\mathsf{rf}}}
+\newcommand{\nRrf}{n_{\mathsf{r}}^{\mathsf{rf}}}
+
+% Physical antenna elements
+\newcommand{\NTa}{N_{\mathsf{t}}^{\mathsf{a}}}
+\newcommand{\NRa}{N_{\mathsf{r}}^{\mathsf{a}}}
+\newcommand{\nTa}{n_{\mathsf{t}}^{\mathsf{a}}}
+\newcommand{\nRa}{n_{\mathsf{r}}^{\mathsf{a}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 10. MIMO PRECODING AND COMBINING MATRICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Digital precoding and combining
+\newcommand{\FD}{\ma{F}_{\mathsf{D}}}
+\newcommand{\WD}{\ma{W}_{\mathsf{D}}}
+
+% Analog precoding and combining
+\newcommand{\FA}{\ma{F}_{\mathsf{A}}}
+\newcommand{\WA}{\ma{W}_{\mathsf{A}}}
+
+
+% MIMO channel representations
+
+\newcommand{\Ha}{\ma{H}_{\mathsf{a}}}
+% Antenna-level channel (physical antenna elements)
+
+\newcommand{\Hrf}{\ma{H}_{\mathsf{rf}}}
+% Effective channel after analog TX/RX processing
+
+
+% H_a: Physical antenna-to-antenna channel
+% H_rf: Effective channel between RF-chain interfaces
+% H: Effective channel between digital signal ports
+% H_s: Effective channel between data streams
+%
+% H_rf = W_A^H H_a F_A
+% H    = W_D^H H_rf F_D
+% H_s  = W^H H F
+
+
+\newcommand{\Hs}{\ma{H}_{\mathsf{s}}}
+% Effective stream-level channel after digital
+% precoding and combining
+
+% Diversity and multiplexing performance
+\providecommand{\odiv}{o_{\mathsf{div}}}   % Diversity order
+\providecommand{\gmux}{g_{\mathsf{mux}}}   % Multiplexing gain
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 11. SIGNAL ENERGY AND NOISE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Es}{E_{\mathsf{s}}} % Energy per symbol
+\newcommand{\Ed}{E_{\mathsf{d}}} % Total energy
+
+\newcommand{\Eb}{E_{\mathsf{b}}} % Energy per bit
+
+% Noise power spectral density parameter
+\newcommand{\Nzero}{N_{0}}
+
+\newcommand{\Ptx}{P_{\mathsf{t}}}
+\newcommand{\Prx}{P_{\mathsf{r}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 12. COMMUNICATION METRICS AND ALGORITHMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\SNR}{\mathsf{SNR}}
+\newcommand{\SINR}{\mathsf{SINR}}
+\newcommand{\CSI}{\mathsf{CSI}}
+
+% Combining and precoding
+\newcommand{\MRT}{\mathsf{MRT}}
+\newcommand{\MRC}{\mathsf{MRC}}
+\newcommand{\ZF}{\mathsf{ZF}}
+\newcommand{\LMMSE}{\mathsf{LMMSE}}
+
+% Additional commonly used methods
+\newcommand{\LS}{\mathsf{LS}}
+\newcommand{\MMSE}{\mathsf{MMSE}}
+\newcommand{\ML}{\mathsf{ML}}
+\newcommand{\MAP}{\mathsf{MAP}}
+\newcommand{\RZF}{\mathsf{RZF}}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of common notation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

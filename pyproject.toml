@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mimo-communications-lab"
+version = "0.1.0"
+description = "Educational mathematical models and signal-processing tools for the TU Dresden MIMO Communications course."
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+authors = [{name = "Ahmad Nimr"}]
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+notebooks = ["matplotlib", "jupyterlab", "ipykernel"]
+dev = ["pytest"]
+
+[project.urls]
+Repository = "https://github.com/ahmadnimr/mimo-communications-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"
